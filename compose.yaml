@@ -1,0 +1,19 @@
+services:
+  frontend:
+    image: zippybonhtm/chemical-calc:1.0
+    ports:
+      - 3000:3000
+    networks:
+      - front-tier
+      - back-tier
+  
+  backend:
+    image: zippybonhtm/api-chemical-calc:1.0
+    ports:
+      - 3010:3010
+    networks:
+      - back-tier
+
+networks:
+  front-tier: {}
+  back-tier: {}
