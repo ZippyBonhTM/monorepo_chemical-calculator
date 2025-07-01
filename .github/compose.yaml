@@ -1,0 +1,14 @@
+name: Docker compose up front and backend
+run-name: ${{ github.actor }} is learning Github Actions
+n: [ '*' ]
+
+jobs:
+  up:
+  runs-on: ubuntu-latest
+  steps: 
+    - uses: actions/checkout@v4.2.2
+    
+    - name: Run docker compose
+      uses: hoverkraft-tech/compose-action@v2.2.0
+      with:
+        compose-file: "./compose.yaml"
